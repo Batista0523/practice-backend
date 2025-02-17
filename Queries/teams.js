@@ -3,7 +3,7 @@ const db = require("../db/db.Config");
 const getAllTeam = async () => {
   try {
     const allTeam = await db.any("SELECT * FROM team");
-    console.log(allTeam, 'team in query');
+  
     return allTeam;
   } catch (err) {
     console.error("Error getting all teams", err);
