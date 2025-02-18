@@ -48,7 +48,6 @@ Team.post("/", async (req, res) => {
 Team.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    
     const updatedTeam = await updateTeam(id, req.body);
     if (updatedTeam) {
       res.status(200).json({ success: true, payload: updatedTeam });

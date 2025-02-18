@@ -24,7 +24,7 @@ const createBook = async (book) => {
   try {
     const { title, author, genre, available_date, image } = book;
     const createdBook = await db.one(
-      "INSERT INTO book (title, author ,genre ,available_date , image) VALUES($1,$2,$3,$4,$5) RETURNING *",
+      "INSERT INTO books (title, author ,genre ,available_date , image) VALUES($1,$2,$3,$4,$5) RETURNING *",
       [title, author, genre, available_date, image]
     );
     return createdBook;
